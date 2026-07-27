@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Personal Loan Enquiry | CT Finance</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f5f9;
+        color: #172033;
+    }
+
+    header {
+        background: white;
+        padding: 18px 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #123b73;
+    }
+
+    .logo span {
+        color: #19a66b;
+    }
+
+    .main {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .intro {
+        padding: 20px;
+    }
+
+    .intro h1 {
+        font-size: 42px;
+        color: #123b73;
+        margin-bottom: 20px;
+    }
+
+    .intro h1 span {
+        color: #19a66b;
+    }
+
+    .intro p {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .intro ul {
+        list-style: none;
+    }
+
+    .intro li {
+        margin: 15px 0;
+        font-size: 16px;
+    }
+
+    .form-card {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    }
+
+    .form-card h2 {
+        color: #123b73;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        color: #64748b;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 7px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #d5dce5;
+        border-radius: 7px;
+        font-size: 15px;
+    }
+
+    input:focus,
+    select:focus {
+        outline: none;
+        border-color: #123b73;
+    }
+
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .consent {
+        display: flex;
+        gap: 8px;
+        margin: 20px 0;
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.5;
+    }
+
+    .consent input {
+        width: auto;
+        margin-top: 3px;
+    }
+
+    button {
+        width: 100%;
+        padding: 16px;
+        border: none;
+        border-radius: 8px;
+        background: #19a66b;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #128454;
+    }
+
+    .success {
+        display: none;
+        text-align: center;
+        padding: 30px 10px;
+    }
+
+    .success h2 {
+        color: #123b73;
+        margin-bottom: 15px;
+    }
+
+    .success p {
+        color: #64748b;
+        line-height: 1.6;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px;
+        font-size: 12px;
+        color: #64748b;
+    }
+
+    @media (max-width: 768px) {
+
+        .main {
+            grid-template-columns: 1fr;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        .intro h1 {
+            font-size: 34px;
+        }
+
+        .form-card {
+            padding: 22px;
+        }
+    }
+
+    @media (max-width: 450px) {
+
+        .two-column {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <div class="header">
+        <div class="logo">
+            CT <span>Finance</span>
+        </div>
+
+        <div>
+            🔒 Secure Enquiry
+        </div>
+    </div>
+</header>
+
+<main class="main">
+
+    <section class="intro">
+
+        <h1>
+            Check Your
+            <span>Loan Eligibility</span>
+        </h1>
+
+        <p>
+            Submit your basic details and our loan advisor will contact you regarding available loan options.
+        </p>
+
+        <ul>
+            <li>✓ Quick online enquiry</li>
+            <li>✓ Simple documentation guidance</li>
+            <li>✓ Personal loan assistance</li>
+            <li>✓ Secure information handling</li>
+        </ul>
+
+    </section>
+
+    <section class="form-card">
+
+        <form id="loanForm">
+
+            <h2>Submit Your Details</h2>
+
+            <p class="subtitle">
+                Please provide accurate information so our advisor can contact you.
+            </p>
+
+            <div class="form-group">
+                <label>Full Name *</label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number *</label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Enter 10-digit mobile number"
+                    maxlength="10"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>City *</label>
+
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="Enter your city"
+                    required
+                >
+            </div>
+
+            <div class="two-column">
+
+                <div class="form-group">
+                    <label>Employment Type *</label>
+
+                    <select id="employmentType" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Salaried">
+                            Salaried
+                        </option>
+
+                        <option value="Self Employed">
+                            Self Employed
+                        </option>
+
+                        <option value="Business Owner">
+                            Business Owner
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Monthly Income *</label>
+
+                    <input
+                        type="number"
+                        id="monthlyIncome"
+                        placeholder="Example: 50000"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="two-column">
+
+                <div class="form-group">
+                    <label>Required Loan Amount *</label>
+
+                    <input
+                        type="number"
+                        id="loanAmount"
+                        placeholder="Example: 500000"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Existing EMI</label>
+
+                    <input
+                        type="number"
+                        id="existingEmi"
+                        placeholder="Enter EMI"
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Company / Business Name</label>
+
+                <input
+                    type="text"
+                    id="companyName"
+                    placeholder="Enter company or business name"
+                >
+            </div>
+
+            <div class="two-column">
+
+                <div class="form-group">
+                    <label>Lead Source *</label>
+
+                    <select id="leadSource" required>
+
+                        <option value="">
+                            Select Source
+                        </option>
+
+                        <option value="Instagram">
+                            Instagram
+                        </option>
+
+                        <option value="Facebook">
+                            Facebook
+                        </option>
+
+                        <option value="Google">
+                            Google
+                        </option>
+
+                        <option value="WhatsApp">
+                            WhatsApp
+                        </option>
+
+                        <option value="Referral">
+                            Referral
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Campaign Name</label>
+
+                    <input
+                        type="text"
+                        id="campaignName"
+                        placeholder="Example: Personal Loan July"
+                    >
+                </div>
+
+            </div>
+
+            <div class="consent">
+
+                <input
+                    type="checkbox"
+                    id="consent"
+                    required
+                >
+
+                <label for="consent">
+
+                    I agree to be contacted by CT Finance or its representatives regarding my loan enquiry and available financial products.
+
+                </label>
+
+            </div>
+
+            <button type="submit">
+                SUBMIT LOAN ENQUIRY
+            </button>
+
+        </form>
+
+        <div class="success" id="successMessage">
+
+            <h2>Thank You! ✓</h2>
+
+            <p>
+                Your loan enquiry has been submitted successfully.
+                Our loan advisor will contact you shortly.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    © 2026 CT Finance. All Rights Reserved.
+
+</footer>
+
+<script>
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbx2oNckZby06vKgDy_MMUt1Y0hG63YDdXGBXQRhUfr_2FF5UpIoePHZmzoAkQj-v9QF/exec";
+
+
+document
+    .getElementById("loanForm")
+    .addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+
+        const formData = {
+
+            fullName:
+                document.getElementById("fullName").value,
+
+            mobile:
+                document.getElementById("mobile").value,
+
+            city:
+                document.getElementById("city").value,
+
+            employmentType:
+                document.getElementById("employmentType").value,
+
+            monthlyIncome:
+                document.getElementById("monthlyIncome").value,
+
+            loanAmount:
+                document.getElementById("loanAmount").value,
+
+            existingEmi:
+                document.getElementById("existingEmi").value || "0",
+
+            companyName:
+                document.getElementById("companyName").value,
+
+            leadSource:
+                document.getElementById("leadSource").value,
+
+            campaignName:
+                document.getElementById("campaignName").value,
+
+            consent:
+                document.getElementById("consent").checked
+                ? "Yes"
+                : "No"
+
+        };
+
+
+        console.log("Sending data:", formData);
+
+
+        try {
+
+            await fetch(
+
+                GOOGLE_SCRIPT_URL,
+
+                {
+
+                    method: "POST",
+
+                    mode: "no-cors",
+
+                    headers: {
+
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+
+                    },
+
+                    body: JSON.stringify(formData)
+
+                }
+
+            );
+
+
+            document
+                .getElementById("loanForm")
+                .style.display = "none";
+
+
+            document
+                .getElementById("successMessage")
+                .style.display = "block";
+
+
+        } catch (error) {
+
+            console.error(
+                "Submission error:",
+                error
+            );
+
+            alert(
+                "Unable to submit. Please try again."
+            );
+
+        }
+
+    });
+
+</script>
+```
+
+</body>
+
+</html>
